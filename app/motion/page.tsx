@@ -94,15 +94,22 @@ export default function Motion() {
 				<img
 					src="/sticker.png"
 					alt=""
-					className="z-50 w-[500px] translate-x-40"
+					className="z-50 w-[500px] translate-x-40 -translate-y-5"
 				/>
 				<img
 					src="/sticker-3.png"
 					alt=""
-					className="z-50 w-[500px] -translate-x-40"
+					className="z-50 w-[500px] -translate-x-40 -translate-y-4"
 				/>
+				<div
+					className="absolute w-screen h-16"
+					style={{
+						background:
+							"radial-gradient(circle at 50% 50%, #0068ff 0%, transparent 80%)",
+					}}
+				></div>
 			</main>
-			<section className="w-[95%] mx-auto bg-black grid grid-cols-2 gap-10">
+			<section className="mt-20 w-[95%] mx-auto bg-black grid grid-cols-2 gap-10">
 				{VIDEOS.map((item) => (
 					<div
 						key={item.youtubeId}
