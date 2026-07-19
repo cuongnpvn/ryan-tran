@@ -5,29 +5,30 @@ import YouTubeEmbed, { youtubeThumbnail } from "../components/youtube-embed";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
-const DESCRIPTION =
-	"My first time creating the full scene and visual direction for a motion project. Inspired by “Gội Đầu” from Thắng’s album Cái Thứ 2, this piece imagines a lonely bar scene where a man becomes obsessed with the memories of his past lover. I hope you guys enjoy this video.";
-
 const VIDEOS = [
 	{
 		youtubeId: "1mNub1I46Es",
 		titleSrc: "/goi-dau-title.svg",
-		description: DESCRIPTION,
+		description:
+			"My first time creating the full scene and visual direction for a motion project. Inspired by “Gội Đầu” from Thắng’s album Cái Thứ 2, this piece imagines a lonely bar scene where a man becomes obsessed with the memories of his past lover. I hope you guys enjoy this video.",
 	},
 	{
 		youtubeId: "ra3_se27zoc",
 		titleSrc: "/devil.svg",
-		description: DESCRIPTION,
+		description:
+			"I created this kinetic motion project for a university assignment, using typography and motion to visually interpret Devil in Disguise and its themes of deception and hidden identity.",
 	},
 	{
 		youtubeId: "IHkxcvurFTI",
 		titleSrc: "/human.svg",
-		description: DESCRIPTION,
+		description:
+			"This is one of my most polished animation projects from university. I was responsible for animating the designed frames and also contributed to the illustration design. Working on both aspects allowed me to maintain a consistent visual style and smooth motion throughout the final animation.",
 	},
 	{
 		youtubeId: "DZHA6PiUbGA",
 		titleSrc: "/prince.svg",
-		description: DESCRIPTION,
+		description:
+			"t4 I created this kinetic motion project for a university assignment, using typography and motion to visually interpret Devil in Disguise and its themes of deception and hidden identity.",
 	},
 ] as const;
 
@@ -139,12 +140,15 @@ export default function Motion() {
 								<img
 									src={item.titleSrc}
 									alt=""
-									className="w-48"
+									className={`w-48 ${item.youtubeId === VIDEOS[1]?.youtubeId ? " mb-10" : ""}`}
 								/>
+
 								<button
 									type="button"
+									onClick={() => setActiveId(item.youtubeId)}
 									className="relative border-2 border-white w-[200px] px-3 py-2 rounded-full font-bold text-white text-4xl"
 									style={motionButtonStyle}
+									aria-label="Play video in theater mode"
 								>
 									Motion
 									<img
