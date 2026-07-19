@@ -28,7 +28,7 @@ const VIDEOS = [
 		youtubeId: "DZHA6PiUbGA",
 		titleSrc: "/prince.svg",
 		description:
-			"t4 I created this kinetic motion project for a university assignment, using typography and motion to visually interpret Devil in Disguise and its themes of deception and hidden identity.",
+			"I created this kinetic motion project for a university assignment, using typography and motion to visually interpret Devil in Disguise and its themes of deception and hidden identity.",
 	},
 ] as const;
 
