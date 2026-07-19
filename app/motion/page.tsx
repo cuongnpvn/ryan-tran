@@ -111,7 +111,7 @@ export default function Motion() {
 				></div>
 			</main>
 			<section className="mt-20 w-[95%] mx-auto bg-black grid grid-cols-2 gap-10">
-				{VIDEOS.map((item) => (
+				{VIDEOS.map((item, index) => (
 					<div
 						key={item.youtubeId}
 						className="border border-white flex flex-col"
@@ -134,13 +134,15 @@ export default function Motion() {
 						</button>
 						<div className="p-5 flex justify-between">
 							<div className="flex flex-col">
-								<p className="mt-2 uppercase text-white text-4xl font-semibold">
-									Kinetic MV:
-								</p>
+								{(index === 0 || index === 1) && (
+									<p className="mt-2 uppercase text-white text-4xl font-semibold">
+										Kinetic MV:
+									</p>
+								)}
 								<img
 									src={item.titleSrc}
 									alt=""
-									className={`w-48 ${item.youtubeId === VIDEOS[1]?.youtubeId ? " mb-10" : ""}`}
+									className={`${index === 0 ? "w-56" : "w-80"} ${index === 1 ? "mb-8" : ""}`}
 								/>
 
 								<button
