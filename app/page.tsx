@@ -23,7 +23,7 @@ export default function Home() {
 				className="absolute top-12 md:top-0 left-0 w-full object-contain pointer-events-none"
 			/>
 			<main
-				className="w-full min-h-screen flex items-center justify-center px-4 pt-20"
+				className="w-full min-h-[70vh] sm:min-h-screen flex items-center justify-center px-4 pt-20"
 				style={{
 					backgroundImage: "url('/hero-background.png')",
 					backgroundSize: "cover",
@@ -33,7 +33,7 @@ export default function Home() {
 			>
 				{/* Fixed aspect stage: children use % of this box so they scale together */}
 				<div className="@container relative w-full max-w-4xl aspect-5/4">
-					<div className="absolute left-1/2 top-[6%] z-50 w-[90%] -translate-x-1/2 -translate-y-40 md:translate-y-0">
+					<div className="absolute left-1/2  top-[6%] z-50 w-[90%] -translate-x-1/2 -translate-y-10 md:translate-y-0">
 						<motion.h1
 							className="uppercase font-bold text-center text-cyan-100 text-[clamp(1.25rem,7cqw,3.75rem)]"
 							initial={{ opacity: 0, y: 24 }}
@@ -47,7 +47,7 @@ export default function Home() {
 							Welcome to my website portfolio
 						</motion.h1>
 					</div>
-					<div className="absolute left-1/2 top-[38%] z-50 w-[90%] sm:w-[78%] -translate-x-1/2 -translate-y-32 md:translate-y-0">
+					<div className="absolute left-1/2 top-[38%] z-50 w-[90%] sm:w-[78%] -translate-x-1/2 -translate-y-5 md:translate-y-0">
 						<motion.p
 							className="text-center text-[clamp(0.8rem,2.4cqw,1.25rem)] leading-snug sm:leading-normal"
 							initial={{ opacity: 0, y: 24 }}
