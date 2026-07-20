@@ -45,7 +45,7 @@ export default function Home() {
 						Welcome to my website portfolio
 					</motion.h1>
 					<motion.p
-						className="mb-80 mt-10 w-160 z-50 text-xl text-center"
+						className="mb-80 mt-10 w-160 z-50 text-xl text-center text-white"
 						initial={{ opacity: 0, y: 24 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{
