@@ -78,7 +78,7 @@ export default function Motion() {
 					background:
 						"linear-gradient(135deg, #0068ff00 0%,  transparent 70%)",
 				}}
-				className="z-30 absolute top-24 sm:top-32 sm:-left-10 opacity-30 sm:opacity-50 w-full max-w-none sm:max-w-[90vw] pointer-events-none object-fill"
+				className="z-30 absolute top-24 sm:top-32 sm:-left-10 opacity-30 sm:opacity-50 w-full max-w-none sm:max-w-screen pointer-events-none object-fill"
 			/>
 			<main className="relative min-h-[40vh] sm:min-h-screen bg-black flex justify-center items-end px-4 pb-6">
 				<div className="inset-0 flex justify-center">
