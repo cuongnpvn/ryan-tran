@@ -15,15 +15,15 @@ const fadeIn = {
 
 export default function Home() {
 	return (
-		<div className="relative flex flex-col">
+		<div className="relative flex flex-col overflow-x-hidden">
 			<Header />
 			<img
 				src="/hero-central-ill.png"
 				alt=""
-				className="absolute top-0 left-0 w-full object-contain"
+				className="absolute top-12 md:top-0 left-0 w-full object-contain pointer-events-none"
 			/>
 			<main
-				className="w-full min-h-screen flex items-center justify-center px-4"
+				className="w-full min-h-screen flex items-center justify-center px-4 pt-20"
 				style={{
 					backgroundImage: "url('/hero-background.png')",
 					backgroundSize: "cover",
@@ -33,9 +33,9 @@ export default function Home() {
 			>
 				{/* Fixed aspect stage: children use % of this box so they scale together */}
 				<div className="@container relative w-full max-w-4xl aspect-5/4">
-					<div className="absolute left-1/2 top-[6%] z-50 w-[90%] -translate-x-1/2">
+					<div className="absolute left-1/2 top-[6%] z-50 w-[90%] -translate-x-1/2 -translate-y-40 md:translate-y-0">
 						<motion.h1
-							className="uppercase font-bold text-center text-cyan-100 text-[clamp(1.5rem,7cqw,3.75rem)]"
+							className="uppercase font-bold text-center text-cyan-100 text-[clamp(1.25rem,7cqw,3.75rem)]"
 							initial={{ opacity: 0, y: 24 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{
@@ -47,9 +47,9 @@ export default function Home() {
 							Welcome to my website portfolio
 						</motion.h1>
 					</div>
-					<div className="absolute left-1/2 top-[28%] z-50 w-[78%] -translate-x-1/2">
+					<div className="absolute left-1/2 top-[38%] z-50 w-[90%] sm:w-[78%] -translate-x-1/2 -translate-y-32 md:translate-y-0">
 						<motion.p
-							className="text-center text-[clamp(0.875rem,2.4cqw,1.25rem)]"
+							className="text-center text-[clamp(0.8rem,2.4cqw,1.25rem)] leading-snug sm:leading-normal"
 							initial={{ opacity: 0, y: 24 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{
@@ -65,7 +65,7 @@ export default function Home() {
 						</motion.p>
 					</div>
 					{/* Layout wrappers keep % position; motion animates inside so transforms don't fight */}
-					<div className="absolute left-[6%] top-[62%] z-10 h-[28%] -translate-x-[20%]">
+					<div className="absolute left-[6%] top-[62%] z-10 h-[28%] translate-x-[-20%]">
 						<motion.img
 							src="/left-hand.png"
 							alt="Left hand"
@@ -96,27 +96,27 @@ export default function Home() {
 				</div>
 			</main>
 			<motion.div
-				className="mt-20 w-full flex items-center justify-center py-3"
+				className="mt-10 sm:mt-20 w-full flex items-center justify-center py-2 sm:py-3 px-4"
 				style={{
 					background:
 						"linear-gradient(90deg, #000000 0%, #0068ff 50%, #000000 100%)",
 				}}
 				{...fadeIn}
 			>
-				<h2 className="uppercase text-7xl font-bold text-center font-cinema-sunday bg-linear-to-tr from-cyan-500 to-white bg-clip-text text-transparent">
+				<h2 className="uppercase text-3xl sm:text-5xl md:text-7xl font-bold text-center font-cinema-sunday bg-linear-to-tr from-cyan-500 to-white bg-clip-text text-transparent">
 					Motion Project
 				</h2>
 			</motion.div>
-			<div className="py-20 flex flex-col justify-center items-center">
-				<div className="mx-auto w-4/5 flex flex-col">
+			<div className="py-10 sm:py-20 flex flex-col justify-center items-center px-4">
+				<div className="mx-auto w-full max-w-6xl sm:w-4/5 flex flex-col">
 					<motion.div {...fadeIn}>
 						<YouTubeEmbed
 							videoId="1mNub1I46Es"
-							className="border-3 border-white"
+							className="border-2 sm:border-3 border-white"
 						/>
 					</motion.div>
 					<motion.div
-						className="relative p-6 bg-black flex justify-between"
+						className="relative p-4 sm:p-6 bg-black flex flex-col md:flex-row md:justify-between gap-6"
 						{...fadeIn}
 						transition={{ ...fadeIn.transition, delay: 0.1 }}
 					>
@@ -134,7 +134,7 @@ export default function Home() {
 
 							{/* Smaller solid blue circle to accent the effect and mimic a drop */}
 							<div
-								className="absolute rounded-full shadow-2xl"
+								className="absolute rounded-full shadow-2xl hidden sm:block"
 								style={{
 									backgroundColor: "#0068ff",
 									width: "110px",
@@ -149,18 +149,18 @@ export default function Home() {
 								aria-hidden="true"
 							/>
 						</div>
-						<div className="flex flex-col">
-							<p className="mt-2 uppercase text-white text-8xl font-semibold">
+						<div className="relative z-10 flex flex-col items-start">
+							<p className="mt-2 uppercase text-white text-4xl sm:text-6xl md:text-8xl font-semibold">
 								Kinetic MV:
 							</p>
 							<img
 								src="/goi-dau-title.svg"
 								alt=""
-								className="w-88"
+								className="w-48 sm:w-72 md:w-88"
 							/>
 							<Link
 								href="/motion"
-								className="relative border-2 border-white w-[200px] px-3 py-2 rounded-full font-bold text-white text-4xl text-center"
+								className="relative border-2 border-white w-[160px] sm:w-[200px] px-3 py-2 rounded-full font-bold text-white text-2xl sm:text-4xl text-center"
 								style={{
 									background:
 										"linear-gradient(90deg, #000000 10%, #0068ff 50%, #000000 90%)",
@@ -173,11 +173,11 @@ export default function Home() {
 								<img
 									src="/sticker.png"
 									alt=""
-									className="absolute -right-10 -top-2 w-20"
+									className="absolute -right-8 sm:-right-10 -top-2 w-14 sm:w-20"
 								/>
 							</Link>
 						</div>
-						<p className="mt-10 mr-20 w-[40%] z-50 text-white text-right text-2xl font-semibold">
+						<p className="relative z-10 md:mt-10 md:mr-8 lg:mr-20 w-full md:w-[40%] text-white text-left md:text-right text-base sm:text-xl md:text-2xl font-semibold">
 							My first time creating the full scene and visual
 							direction for a motion project. Inspired by “Gội
 							Đầu” from Thắng’s album Cái Thứ 2, this piece
@@ -213,34 +213,38 @@ export default function Home() {
 				</div>
 			</div>
 			<motion.div
-				className="w-full flex items-center justify-center py-3"
+				className="w-full flex items-center justify-center py-2 sm:py-3 px-4"
 				style={{
 					background:
 						"linear-gradient(90deg, #000000 0%, #0068ff 50%, #000000 100%)",
 				}}
 				{...fadeIn}
 			>
-				<h2 className="uppercase text-7xl font-bold text-center font-cinema-sunday bg-linear-to-tr from-cyan-500 to-white bg-clip-text text-transparent">
+				<h2 className="uppercase text-3xl sm:text-5xl md:text-7xl font-bold text-center font-cinema-sunday bg-linear-to-tr from-cyan-500 to-white bg-clip-text text-transparent">
 					Exhibition Social
 				</h2>
 			</motion.div>
 			<motion.div
-				className="mt-5 p-5 mx-auto w-4/5 flex justify-between gap-10 border-2 border-white"
+				className="mt-5 p-4 sm:p-5 mx-auto w-full max-w-6xl sm:w-4/5 flex flex-col md:flex-row md:justify-between gap-6 md:gap-10 border-2 border-white"
 				{...fadeIn}
 			>
-				<div className="w-1/2 flex flex-col">
+				<div className="w-full md:w-1/2 flex flex-col">
 					<img
 						src="/exhibit-1.png"
 						alt=""
-						className="hover:scale-101 transition-all duration-300"
+						className="w-full hover:scale-101 transition-all duration-300"
 					/>
 					<div className="flex flex-col justify-center items-center">
-						<p className="mt-2 uppercase text-white text-8xl font-semibold">
+						<p className="mt-2 uppercase text-white text-4xl sm:text-6xl md:text-8xl font-semibold text-center">
 							EXHIBITION
 						</p>
-						<img src="/sipsynce.svg" alt="" className="w-120" />
+						<img
+							src="/sipsynce.svg"
+							alt=""
+							className="w-56 sm:w-80 md:w-120"
+						/>
 						<Link
-							className="mt-4 relative border-2 border-white px-10 py-2 rounded-full font-bold text-white text-3xl"
+							className="mt-4 relative border-2 border-white px-6 sm:px-10 py-2 rounded-full font-bold text-white text-xl sm:text-3xl"
 							style={{
 								background:
 									"linear-gradient(90deg, #000000 10%, #0068ff 50%, #000000 90%)",
@@ -254,18 +258,18 @@ export default function Home() {
 							<img
 								src="/sticker-2.png"
 								alt=""
-								className="absolute -right-12 -top-8 w-24"
+								className="absolute -right-8 sm:-right-12 -top-6 sm:-top-8 w-16 sm:w-24"
 							/>
 						</Link>
 					</div>
 				</div>
-				<div className="w-1/2 flex flex-col">
+				<div className="w-full md:w-1/2 flex flex-col">
 					<img
 						src="/exhibit-2.png"
 						alt=""
-						className="hover:scale-101 transition-all duration-300"
+						className="w-full hover:scale-101 transition-all duration-300"
 					/>
-					<p className="mt-8 text-white text-justify text-2xl font-semibold">
+					<p className="mt-6 sm:mt-8 text-white text-left md:text-justify text-base sm:text-xl md:text-2xl font-semibold">
 						SipSync is an immersive exhibition that transforms drink
 						tasting into a journey of self-discovery and social
 						connection. Through curated flavor experiences, visitors
@@ -275,7 +279,7 @@ export default function Home() {
 					</p>
 				</div>
 			</motion.div>
-			<div className="mt-5 mx-auto w-4/5 grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div className="mt-5 mx-auto w-full max-w-6xl sm:w-4/5 px-4 sm:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
 				{[
 					"/exhibit-3.png",
 					"/exhibit-4.png",

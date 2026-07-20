@@ -10,11 +10,11 @@ export default function Footer() {
 				}}
 				aria-hidden="true"
 			/>
-			<div className="w-full flex items-center justify-center py-10 gap-40">
-				<img src="icon-fb.svg" alt="" className="" />
-				<img src="icon-lk.svg" alt="" className="" />
-				<img src="icon-ig.svg" alt="" className="" />
-				<img src="icon-yt.svg" alt="" className="" />
+			<div className="relative z-10 w-full flex items-center justify-center py-8 sm:py-10 gap-8 sm:gap-16 md:gap-40 px-4">
+				<img src="/icon-fb.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
+				<img src="/icon-lk.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
+				<img src="/icon-ig.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
+				<img src="/icon-yt.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
 			</div>
 		</footer>
 	);

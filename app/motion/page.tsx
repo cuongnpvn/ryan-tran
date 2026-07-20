@@ -69,7 +69,7 @@ export default function Motion() {
 	}
 
 	return (
-		<div className="relative flex flex-col">
+		<div className="relative flex flex-col overflow-x-hidden">
 			<Header />
 			<img
 				src="/motion.webp"
@@ -78,9 +78,9 @@ export default function Motion() {
 					background:
 						"linear-gradient(135deg, #0068ff00 0%,  transparent 70%)",
 				}}
-				className="z-30 absolute top-32 -left-10 opacity-50"
+				className="z-30 absolute top-24 sm:top-32 sm:-left-10 opacity-30 sm:opacity-50 w-full max-w-none sm:max-w-[90vw] pointer-events-none object-fill"
 			/>
-			<main className=" relative min-h-screen bg-black flex justify-center items-end">
+			<main className="relative min-h-[40vh] sm:min-h-screen bg-black flex justify-center items-end px-4 pb-6">
 				<div className="inset-0 flex justify-center">
 					{/* Back backdrop with blue droplet effect */}
 					<div
@@ -96,7 +96,7 @@ export default function Motion() {
 				<motion.img
 					src="/sticker.png"
 					alt=""
-					className="z-50 w-[500px] translate-x-36 -translate-y-5"
+					className="z-50 w-[40vw] max-w-[280px] sm:max-w-[400px] md:w-[500px] translate-x-10 sm:translate-x-36 -translate-y-8 sm:-translate-y-5"
 					initial={{ opacity: 0, x: -80 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{
@@ -108,7 +108,7 @@ export default function Motion() {
 				<motion.img
 					src="/sticker-3.png"
 					alt=""
-					className="z-50 w-[500px] -translate-x-40 -translate-y-4"
+					className="z-50 w-[40vw] max-w-[280px] sm:max-w-[400px] md:w-[500px] -translate-x-10 sm:-translate-x-40 -translate-y-8 sm:-translate-y-4"
 					initial={{ opacity: 0, x: 80 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{
@@ -118,14 +118,14 @@ export default function Motion() {
 					}}
 				/>
 				<div
-					className="absolute w-screen h-16"
+					className="absolute w-screen h-12 sm:h-16"
 					style={{
 						background:
 							"radial-gradient(circle at 50% 50%, #0068ff 0%, transparent 80%)",
 					}}
 				></div>
 			</main>
-			<section className="mt-20 w-[95%] mx-auto bg-black grid grid-cols-2 gap-10">
+			<section className="mt-10 sm:mt-20 w-full sm:w-[95%] mx-auto bg-black grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 px-4 sm:px-0 pb-10">
 				{VIDEOS.map((item, index) => (
 					<div
 						key={item.youtubeId}
@@ -140,30 +140,30 @@ export default function Motion() {
 							<img
 								src={youtubeThumbnail(item.youtubeId)}
 								alt=""
-								className="pointer-events-none w-full aspect-video object-cover border-3 border-white"
+								className="pointer-events-none w-full aspect-video object-cover border-2 sm:border-3 border-white"
 							/>
 							<span
 								className="pointer-events-none absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 								aria-hidden="true"
 							/>
 						</button>
-						<div className="p-5 flex justify-between">
-							<div className="flex flex-col">
+						<div className="p-4 sm:p-5 flex flex-col gap-4 sm:flex-row sm:justify-between">
+							<div className="flex flex-col items-start">
 								{(index === 0 || index === 1) && (
-									<p className="mt-2 uppercase text-white text-3xl font-semibold">
+									<p className="mt-2 uppercase text-white text-2xl sm:text-3xl font-semibold">
 										Kinetic MV:
 									</p>
 								)}
 								<img
 									src={item.titleSrc}
 									alt=""
-									className={`${index === 0 ? "w-56" : "w-80"} ${index === 1 ? "mb-8" : ""} ${index > 1 ? "-translate-x-5" : ""}`}
+									className={`${index === 0 ? "w-40 sm:w-56" : "w-52 sm:w-80"} ${index === 1 ? "mb-4 sm:mb-8" : ""} ${index > 1 ? "sm:-translate-x-5" : ""}`}
 								/>
 
 								<button
 									type="button"
 									onClick={() => setActiveId(item.youtubeId)}
-									className={`${index > 1 ? "ml-3" : ""} relative border-2 border-white w-[200px] px-3 py-2 rounded-full font-bold text-white text-4xl`}
+									className={`${index > 1 ? "sm:ml-3" : ""} relative border-2 border-white w-[140px] sm:w-[200px] px-3 py-2 rounded-full font-bold text-white text-2xl sm:text-4xl`}
 									style={motionButtonStyle}
 									aria-label="Play video in theater mode"
 								>
@@ -171,11 +171,11 @@ export default function Motion() {
 									<img
 										src="/sticker.png"
 										alt=""
-										className="absolute -right-10 -top-2 w-20"
+										className="absolute -right-8 sm:-right-10 -top-2 w-14 sm:w-20"
 									/>
 								</button>
 							</div>
-							<p className="w-1/2 z-50 text-white text-right text-xl font-semibold">
+							<p className="w-full sm:w-1/2 z-50 text-white text-left sm:text-right text-base sm:text-xl font-semibold">
 								{item.description}
 							</p>
 						</div>
@@ -203,7 +203,7 @@ export default function Motion() {
 					role="dialog"
 					aria-modal="true"
 					aria-label="Video theater"
-					className={`absolute inset-x-0 bottom-10 flex h-[90vh] flex-col bg-black shadow-[0_-12px_40px_rgba(0,0,0,0.55)] transition-transform duration-300 ease-out ${
+					className={`absolute inset-x-0 bottom-0 sm:bottom-10 flex h-[85vh] sm:h-[90vh] flex-col bg-black shadow-[0_-12px_40px_rgba(0,0,0,0.55)] transition-transform duration-300 ease-out ${
 						isOpen ? "translate-y-0" : "translate-y-full"
 					}`}
 				>
@@ -229,7 +229,7 @@ export default function Motion() {
 							</svg>
 						</button>
 					</div>
-					<div className="flex min-h-0 flex-1 items-center justify-center px-4 pb-6 md:px-10">
+					<div className="flex min-h-0 flex-1 items-center justify-center px-3 pb-6 sm:px-10">
 						{activeId ? (
 							<div
 								key={activeId}
