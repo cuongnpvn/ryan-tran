@@ -79,20 +79,6 @@ export default function Home() {
 							}}
 						/>
 					</div>
-					{/* <div className="absolute left-1/2 top-[65%] translate-y-1 z-20 h-[38%] -translate-x-1/2">
-						<motion.img
-							src="/hero-central-glasses.svg"
-							alt="Hero with glasses"
-							className="h-full w-auto"
-							initial={{ opacity: 0, y: -40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{
-								duration: 0.8,
-								ease: "easeOut",
-								delay: 1.2,
-							}}
-						/>
-					</div> */}
 					<div className="absolute right-[6%] top-[62%] z-10 h-[28%] translate-x-[20%]">
 						<motion.img
 							src="/right-hand.png"

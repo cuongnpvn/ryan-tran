@@ -18,7 +18,7 @@ export default function Header() {
 					<li>
 						<a
 							href="/about"
-							className="cursor-pointer hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
+							className="cursor-pointer text-white hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
 						>
 							About
 						</a>
@@ -26,7 +26,7 @@ export default function Header() {
 					<li>
 						<a
 							href="/motion"
-							className="cursor-pointer hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
+							className="cursor-pointer text-white hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
 						>
 							Motion
 						</a>
@@ -34,7 +34,7 @@ export default function Header() {
 					<li>
 						<a
 							href="/illustration"
-							className="cursor-pointer hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
+							className="cursor-pointer text-white hover:text-blue-500 transition-colors font-cinema-sunday text-3xl"
 						>
 							Illustration
 						</a>
