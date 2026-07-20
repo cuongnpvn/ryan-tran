@@ -61,7 +61,7 @@ export default function About() {
 							/>
 							<div className="mt-5 flex flex-col">
 								<motion.span
-									className="uppercase font-bold text-5xl"
+									className="uppercase font-bold text-5xl text-white"
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{
@@ -73,7 +73,7 @@ export default function About() {
 									My name is
 								</motion.span>
 								<motion.span
-									className="uppercase font-cinema-sunday font-bold text-5xl"
+									className="uppercase font-cinema-sunday font-bold text-5xl text-white"
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{
