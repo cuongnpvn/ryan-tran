@@ -157,7 +157,7 @@ export default function Motion() {
 								<img
 									src={item.titleSrc}
 									alt=""
-									className={`${index === 0 ? "w-40 sm:w-56" : "w-52 sm:w-80"} ${index === 1 ? "mb-4 sm:mb-8" : ""} ${index > 1 ? "sm:-translate-x-5" : ""}`}
+									className={`${index === 0 ? "w-40 sm:w-56" : "w-52 sm:w-80"} ${index === 1 ? "mb-4 sm:mb-8" : ""} ${index > 1 ? "-translate-x-4" : ""}`}
 								/>
 
 								<button
