@@ -85,7 +85,7 @@ export default function About() {
 									Ryan Tran
 								</motion.span>
 								<motion.p
-									className="mt-10 text-white text-3xl"
+									className="mt-10 text-white text-3xl font-sans"
 									initial={{ opacity: 0, y: 24 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{
@@ -99,7 +99,7 @@ export default function About() {
 									visuals into engaging moving experiences.
 								</motion.p>
 								<motion.p
-									className="mt-10 text-white text-3xl"
+									className="mt-10 text-white text-3xl font-sans"
 									initial={{ opacity: 0, y: 24 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{
@@ -117,7 +117,7 @@ export default function About() {
 							</div>
 						</div>
 						<motion.p
-							className="text-white text-3xl"
+							className="text-white text-3xl font-sans"
 							initial={{ opacity: 0, y: 24 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{
@@ -134,15 +134,7 @@ export default function About() {
 					</div>
 				</main>
 				<section className="py-20 flex flex-col relative overflow-hidden">
-					<div
-						className="absolute inset-0"
-						style={{
-							background:
-								"radial-gradient(circle at 10% 10%, #0068ff66 20%, transparent 100%)",
-							zIndex: 0,
-						}}
-						aria-hidden="true"
-					/>
+					<div className="absolute inset-0" aria-hidden="true" />
 					<motion.h2
 						className="text-center text-white font-semibold uppercase text-4xl"
 						{...fadeIn}

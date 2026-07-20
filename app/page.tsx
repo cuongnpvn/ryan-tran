@@ -23,7 +23,7 @@ export default function Home() {
 				className="absolute top-0 left-0 w-full object-contain"
 			/>
 			<main
-				className="w-full h-screen flex items-center justify-center"
+				className="w-full min-h-screen flex items-center justify-center px-4"
 				style={{
 					backgroundImage: "url('/hero-background.png')",
 					backgroundSize: "cover",
@@ -31,78 +31,86 @@ export default function Home() {
 					backgroundRepeat: "no-repeat",
 				}}
 			>
-				<div className="flex flex-col relative">
-					<motion.h1
-						className="z-50 uppercase text-6xl w-180 font-bold text-center text-cyan-100"
-						initial={{ opacity: 0, y: 24 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.7,
-							ease: "easeOut",
-							delay: 0,
-						}}
-					>
-						Welcome to my website portfolio
-					</motion.h1>
-					<motion.p
-						className="mb-80 mt-10 w-160 z-50 text-xl text-center"
-						initial={{ opacity: 0, y: 24 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.7,
-							ease: "easeOut",
-							delay: 0.15,
-						}}
-					>
-						Aspiring Motion Designer focused on animation, visual
-						storytelling, and music-driven visuals. Currently
-						learning, experimenting, and creating projects that
-						bring ideas to life through motion.
-					</motion.p>
-					{/* Three absolutely positioned hero images in a row */}
-					<motion.img
-						src="/left-hand.png"
-						alt="Left hand"
-						className="absolute left-0 top-1/2 transform translate-y-1/4 -translate-x-1/3 h-32 sm:h-40 md:h-56"
-						style={{ zIndex: 10 }}
-						initial={{ opacity: 0, x: 200 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{
-							duration: 1.2,
-							ease: "easeOut",
-							delay: 0.2,
-						}}
-					/>
-					<motion.img
-						src="/hero-central-glasses.svg"
-						alt="Hero with glasses"
-						className="mt-6 absolute left-1/2 top-1/2 transform translate-y-1/4 -translate-x-1/2 h-40 sm:h-52 md:h-72"
-						style={{ zIndex: 20 }}
-						initial={{ opacity: 0, y: -40 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.8,
-							ease: "easeOut",
-							delay: 1.2,
-						}}
-					/>
-					<motion.img
-						src="/right-hand.png"
-						alt="Right hand"
-						className="absolute right-0 top-1/2 transform translate-y-1/4 translate-x-1/3 h-32 sm:h-40 md:h-56"
-						style={{ zIndex: 10 }}
-						initial={{ opacity: 0, x: -200 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{
-							duration: 1.2,
-							ease: "easeOut",
-							delay: 0.2,
-						}}
-					/>
+				{/* Fixed aspect stage: children use % of this box so they scale together */}
+				<div className="@container relative w-full max-w-4xl aspect-5/4">
+					<div className="absolute left-1/2 top-[6%] z-50 w-[90%] -translate-x-1/2">
+						<motion.h1
+							className="uppercase font-bold text-center text-cyan-100 text-[clamp(1.5rem,7cqw,3.75rem)]"
+							initial={{ opacity: 0, y: 24 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.7,
+								ease: "easeOut",
+								delay: 0,
+							}}
+						>
+							Welcome to my website portfolio
+						</motion.h1>
+					</div>
+					<div className="absolute left-1/2 top-[28%] z-50 w-[78%] -translate-x-1/2">
+						<motion.p
+							className="text-center text-[clamp(0.875rem,2.4cqw,1.25rem)]"
+							initial={{ opacity: 0, y: 24 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.7,
+								ease: "easeOut",
+								delay: 0.15,
+							}}
+						>
+							Aspiring Motion Designer focused on animation,
+							visual storytelling, and music-driven visuals.
+							Currently learning, experimenting, and creating
+							projects that bring ideas to life through motion.
+						</motion.p>
+					</div>
+					{/* Layout wrappers keep % position; motion animates inside so transforms don't fight */}
+					<div className="absolute left-[6%] top-[62%] z-10 h-[28%] -translate-x-[20%]">
+						<motion.img
+							src="/left-hand.png"
+							alt="Left hand"
+							className="h-full w-auto"
+							initial={{ opacity: 0, x: 80 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{
+								duration: 1.2,
+								ease: "easeOut",
+								delay: 0.2,
+							}}
+						/>
+					</div>
+					{/* <div className="absolute left-1/2 top-[65%] translate-y-1 z-20 h-[38%] -translate-x-1/2">
+						<motion.img
+							src="/hero-central-glasses.svg"
+							alt="Hero with glasses"
+							className="h-full w-auto"
+							initial={{ opacity: 0, y: -40 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								ease: "easeOut",
+								delay: 1.2,
+							}}
+						/>
+					</div> */}
+					<div className="absolute right-[6%] top-[62%] z-10 h-[28%] translate-x-[20%]">
+						<motion.img
+							src="/right-hand.png"
+							alt="Right hand"
+							className="h-full w-auto"
+							initial={{ opacity: 0, x: -80 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{
+								duration: 1.2,
+								ease: "easeOut",
+								delay: 0.2,
+							}}
+						/>
+					</div>
 				</div>
 			</main>
 			<motion.div
-				className="w-full flex items-center justify-center py-3"
+				className="mt-20 w-full flex items-center justify-center py-3"
 				style={{
 					background:
 						"linear-gradient(90deg, #000000 0%, #0068ff 50%, #000000 100%)",

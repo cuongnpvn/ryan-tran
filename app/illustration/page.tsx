@@ -44,16 +44,16 @@ export default function Motion() {
 					src="/sticker-2.png"
 					alt=""
 					className="z-50 w-[500px] translate-x-32 -translate-y-10"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+					initial={{ opacity: 0, x: -80 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
 				/>
 				<motion.img
 					src="/sticker-4.png"
 					alt=""
 					className="z-50 w-[500px] -translate-x-32 -translate-y-14"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
+					initial={{ opacity: 0, x: 80 }}
+					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
 				/>
 				<div
@@ -124,14 +124,16 @@ export default function Motion() {
 						</p>
 					</div>
 				</motion.div>
-				<div className="mt-5 mx-auto w-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
+				<div className="mt-5 mx-auto w-4/5 grid grid-cols-1 md:grid-cols-2 gap-4">
 					{[
-						"/exhibit-1.png",
-						"/exhibit-2.png",
 						"/exhibit-3.png",
 						"/exhibit-4.png",
 						"/exhibit-5.png",
 						"/exhibit-6.png",
+						"/exhibit-7.png",
+						"/exhibit-8.png",
+						"/exhibit-9.png",
+						"/exhibit-10.png",
 					].map((src, idx) => (
 						<motion.div
 							key={src}

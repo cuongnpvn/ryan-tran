@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import YouTubeEmbed, { youtubeThumbnail } from "../components/youtube-embed";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import { motion } from "motion/react";
 
 const VIDEOS = [
 	{
@@ -92,15 +93,29 @@ export default function Motion() {
 						aria-hidden="true"
 					/>
 				</div>
-				<img
+				<motion.img
 					src="/sticker.png"
 					alt=""
-					className="z-50 w-[500px] translate-x-40 -translate-y-5"
+					className="z-50 w-[500px] translate-x-36 -translate-y-5"
+					initial={{ opacity: 0, x: -80 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{
+						duration: 1.1,
+						ease: "easeOut",
+						delay: 0.25,
+					}}
 				/>
-				<img
+				<motion.img
 					src="/sticker-3.png"
 					alt=""
 					className="z-50 w-[500px] -translate-x-40 -translate-y-4"
+					initial={{ opacity: 0, x: 80 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{
+						duration: 1.1,
+						ease: "easeOut",
+						delay: 0.25,
+					}}
 				/>
 				<div
 					className="absolute w-screen h-16"
@@ -135,20 +150,20 @@ export default function Motion() {
 						<div className="p-5 flex justify-between">
 							<div className="flex flex-col">
 								{(index === 0 || index === 1) && (
-									<p className="mt-2 uppercase text-white text-4xl font-semibold">
+									<p className="mt-2 uppercase text-white text-3xl font-semibold">
 										Kinetic MV:
 									</p>
 								)}
 								<img
 									src={item.titleSrc}
 									alt=""
-									className={`${index === 0 ? "w-56" : "w-80"} ${index === 1 ? "mb-8" : ""}`}
+									className={`${index === 0 ? "w-56" : "w-80"} ${index === 1 ? "mb-8" : ""} ${index > 1 ? "-translate-x-5" : ""}`}
 								/>
 
 								<button
 									type="button"
 									onClick={() => setActiveId(item.youtubeId)}
-									className="relative border-2 border-white w-[200px] px-3 py-2 rounded-full font-bold text-white text-4xl"
+									className={`${index > 1 ? "ml-3" : ""} relative border-2 border-white w-[200px] px-3 py-2 rounded-full font-bold text-white text-4xl`}
 									style={motionButtonStyle}
 									aria-label="Play video in theater mode"
 								>
