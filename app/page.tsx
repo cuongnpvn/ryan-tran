@@ -150,7 +150,7 @@ export default function Home() {
 							/>
 						</div>
 						<div className="relative z-10 flex flex-col items-start">
-							<p className="mt-2 uppercase text-white text-4xl sm:text-6xl md:text-8xl font-semibold">
+							<p className="mt-2 uppercase text-white text-4xl md:text-7xl font-semibold whitespace-nowrap">
 								Kinetic MV:
 							</p>
 							<img
