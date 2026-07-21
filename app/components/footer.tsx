@@ -1,4 +1,23 @@
 export default function Footer() {
+	const social_links = [
+		{
+			icon: "/icon-fb.svg",
+			link: "https://www.facebook.com/ryan.tran.355347",
+		},
+		{
+			icon: "/icon-ig.svg",
+			link: "https://www.instagram.com/imryantraan/",
+		},
+		{
+			icon: "/icon-yt.svg",
+			link: "https://www.youtube.com/@NguyenTran-bc8no",
+		},
+		{
+			icon: "/icon-lk.svg",
+			link: "https://www.linkedin.com/in/nguy%C3%AAn-tr%E1%BA%A7n-899568243/",
+		},
+	];
+
 	return (
 		<footer className="relative bg-black flex flex-col">
 			<div
@@ -11,10 +30,21 @@ export default function Footer() {
 				aria-hidden="true"
 			/>
 			<div className="relative z-10 w-full flex items-center justify-center py-8 sm:py-10 gap-8 sm:gap-16 md:gap-40 px-4">
-				<img src="/icon-fb.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
-				<img src="/icon-lk.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
-				<img src="/icon-ig.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
-				<img src="/icon-yt.svg" alt="" className="h-8 sm:h-10 md:h-auto" />
+				{social_links.map((item, idx) => (
+					<a
+						key={item.link}
+						href={item.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={`Open social link ${idx + 1} in new tab`}
+					>
+						<img
+							src={item.icon}
+							alt=""
+							className="h-8 sm:h-10 md:h-auto"
+						/>
+					</a>
+				))}
 			</div>
 		</footer>
 	);
